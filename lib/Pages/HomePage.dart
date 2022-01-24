@@ -25,9 +25,13 @@ class _HomePageState extends State<HomePage> {
             SliverAppBar(
                 expandedHeight: 200.0,
                 flexibleSpace: FlexibleSpaceBar(
+                  background: Image(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                        "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"),
+                  ),
                   titlePadding: EdgeInsets.all(0),
                   title: Container(
-                    color: Colors.amber,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -42,7 +46,10 @@ class _HomePageState extends State<HomePage> {
                                   value: 0.5,
                                 ),
                               ),
-                              Text("50%",style: TextStyle(fontSize: 15),)
+                              Text(
+                                "50%",
+                                style: TextStyle(fontSize: 15),
+                              )
                             ],
                           ),
                         ),

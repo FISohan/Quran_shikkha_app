@@ -14,7 +14,7 @@ class QuotePanel extends StatelessWidget {
       child: Center(
           child: Text(
         QuoteService().getQuote(),
-        style: TextStyle(fontSize: 8),
+        style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,fontFamily: "bn"),
       )),
     );
   }
