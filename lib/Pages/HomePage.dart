@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:arabic_learning/Services/QuoteService.dart';
-import 'package:arabic_learning/Widgets/QuoteDisplay.dart';
+import 'package:arabic_learning/Widgets/QuotePanel.dart';
 import 'package:arabic_learning/Widgets/SlExpansionPanel.dart';
 import 'package:flutter/material.dart';
 
@@ -20,32 +20,38 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Material(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text("App Title"),
-        ),
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: QuoteDisplay(quote: QuoteService().getQuote()),
-            ),
-            Expanded(child: const SlExpansionPanel())
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+                expandedHeight: 200.0,
+                flexibleSpace: FlexibleSpaceBar(
+                  titlePadding: EdgeInsets.all(0),
+                  title: Container(
+                    color: Colors.amber,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              SizedBox(
+                                height: 50,
+                                width: 50,
+                                child: CircularProgressIndicator(
+                                  value: 0.5,
+                                ),
+                              ),
+                              Text("50%",style: TextStyle(fontSize: 15),)
+                            ],
+                          ),
+                        ),
+                        QuotePanel()
+                      ],
+                    ),
+                  ),
+                ))
           ],
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => {
-            super.setState(() {
-              if (f) {
-                f = false;
-                _height = 0;
-              } else {
-                f = true;
-
-                _height = 400;
-              }
-            })
-          },
-          child: const Text("click"),
         ),
       ),
     );
