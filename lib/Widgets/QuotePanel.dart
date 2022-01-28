@@ -10,11 +10,11 @@ class QuotePanel extends StatelessWidget {
     return Container(
       height: 140,
       width: 150,
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Center(
           child: Text(
         QuoteService().getQuote(),
-        style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,fontFamily: "bn"),
+        style: const TextStyle(fontSize: 10,fontWeight: FontWeight.bold,fontFamily: "bn"),
       )),
     );
   }

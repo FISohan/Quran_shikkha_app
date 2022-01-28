@@ -77,9 +77,8 @@ flutter:
   fonts:
       - family: bn
         fonts:
-          - asset: fonts/b.ttf
-          - asset: fonts/bi.ttf
-            style: italic
+          - asset: asset/fonts/bn/b.ttf
+            # style: italic
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
