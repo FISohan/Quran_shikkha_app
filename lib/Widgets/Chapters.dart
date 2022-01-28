@@ -11,7 +11,7 @@ class Chapters extends StatefulWidget {
       required this.index})
       : super(key: key);
   final String chapterName;
-  final String lessonId;
+  final int lessonId;
   final double progress;
   final int index;
   @override

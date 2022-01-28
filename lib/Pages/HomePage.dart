@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 )),
-            Consumer<ChapterService>(
+            Consumer<ChapterList>(
               builder:(context,_c,child)=> SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {

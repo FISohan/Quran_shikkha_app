@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 void main() {
   runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider<ChapterService>(create: (_) => ChapterService())
+      ChangeNotifierProvider<ChapterList>(create: (_) => ChapterList())
     ],
     child: MaterialApp(
       debugShowCheckedModeBanner: false,
