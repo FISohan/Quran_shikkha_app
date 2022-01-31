@@ -8,7 +8,7 @@ class ChapterList extends ChangeNotifier {
     Chapter("হরকত শিক্ষা", 2, true, 1),
     Chapter("মাদ্দ শিক্ষা", 3, true, 1),
     Chapter("ওয়াকফ শিক্ষা", 4, true, 1),
-    Chapter("chapterName5", 5, true, 1),
+    Chapter("জ্ঞাতব্য", 5, true, 1),
   ];
 
   Chapter getChapters(int i) => chapters[i];

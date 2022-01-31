@@ -74,6 +74,15 @@ class Chapters extends StatefulWidget {
 */
 
 class _ChaptersState extends State<Chapters> {
+      final List<List<String>> _l = [
+    ['a', 'b', 'c', 'd', 'e', 'c', 'd', 'e'],
+    ['c', 'd', 'e'],
+    ['f', 'w', 't', 't'],
+    ['f', 'w', 't', 't'],
+    ['f', 'w', 't', 't'],
+    ['f', 'w', 't', 't']
+  ];
+  
   bool f = false;
   @override
   Widget build(BuildContext context) {
@@ -132,20 +141,34 @@ class _ChaptersState extends State<Chapters> {
           ),
         ),
         AnimatedContainer(
-          duration: Duration(milliseconds: 500),
-          height: f ? 0: 100,
-          color: Colors.blue,
-          child: ListView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: f ? 0 : 6,
-            itemBuilder: (context, index) => Container(
-              color: Colors.red,
-              child: Text('data'),
-            ),
-          ),
-        )
+            duration: const Duration(milliseconds: 300),
+            height: f ? _l[widget.index].length * (110) : 0,
+            margin: const EdgeInsets.only(left: 25, right: 15),
+            color: Colors.blue,
+            child: Column(
+              children: !f
+                  ? []
+                  : _lessons(widget.index),
+            ))
       ],
     );
+  }
+
+  List<Widget> _lessons(int id) {
+
+    List<Widget> _widgetList = [];
+
+    _l[id].forEach((element) {
+      _widgetList.add(Container(
+        height: 100,
+        margin: const EdgeInsets.only(bottom: 10),
+        color: Colors.red,
+        child: Center(
+          child: Text(element.toString()),
+        ),
+      ));
+    });
+
+    return _widgetList;
   }
 }
